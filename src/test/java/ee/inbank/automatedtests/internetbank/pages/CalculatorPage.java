@@ -28,7 +28,8 @@ public class CalculatorPage {
   }
 
   public String getCalculatedValue(String expectedValue) {
-    SelenideElement resultElement = page.$x(".//*[@id=\"__BVID__146\"]/div/div[2]/h2/span").shouldHave(exactText(expectedValue), ofSeconds(20L));
+    SelenideElement resultElement = page.$x(".//*[@id=\"__BVID__146\"]/div/div[2]/h2/span")
+        .shouldHave(exactText(expectedValue), ofSeconds(20L));
     return resultElement.getText();
   }
 }
