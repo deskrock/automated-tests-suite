@@ -1,4 +1,4 @@
-package ee.inbank.automatedtests.internetbank;
+package ee.inbank.automatedtests.internetbank.pages;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;

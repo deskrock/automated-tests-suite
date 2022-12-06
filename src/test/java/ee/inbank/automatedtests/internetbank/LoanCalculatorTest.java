@@ -2,6 +2,8 @@ package ee.inbank.automatedtests.internetbank;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import ee.inbank.automatedtests.internetbank.pages.CalculatorPage;
+import ee.inbank.automatedtests.internetbank.pages.MainPage;
 import org.junit.jupiter.api.Test;
 
 public class LoanCalculatorTest extends InternetBankAutomatedTest {

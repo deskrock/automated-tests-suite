@@ -1,4 +1,4 @@
-package ee.inbank.automatedtests.internetbank;
+package ee.inbank.automatedtests.internetbank.pages;
 
 import com.codeborne.selenide.Selenide;
 
