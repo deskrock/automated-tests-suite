@@ -10,6 +10,6 @@ public class AutomatedTest {
     // Set up common webdriver configuration for all flows
     // Configuration.browserSize = "1580x1000";
     // Configuration.browser = "chrome";
-     Configuration.timeout = 100000L;
+    Configuration.timeout = 100000L;
   }
 }

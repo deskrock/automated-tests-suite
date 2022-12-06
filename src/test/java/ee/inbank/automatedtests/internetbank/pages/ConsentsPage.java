@@ -15,7 +15,7 @@ public class ConsentsPage {
   }
 
   public void giveAllConsents() {
-    SelenideElement acceptButton =  page.$("button.btn.ml-lg-3.order-1.order-lg-2.btn-primary");
+    SelenideElement acceptButton = page.$("button.btn.ml-lg-3.order-1.order-lg-2.btn-primary");
     acceptButton.shouldHave(exactText("Accept all cookies"));
     acceptButton.click();
   }

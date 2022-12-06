@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.util.Random;
 import java.util.Set;
 import java.util.stream.IntStream;
-
 import org.openqa.selenium.Cookie;
 
 public class TestUtils {
@@ -35,9 +34,7 @@ public class TestUtils {
     return partialIdentityCode + calculateControlNumber(partialIdentityCode);
   }
 
-
   private static Integer randomIntFromInterval(Integer min, Integer max) {
-    Integer alsoWorks = new Random().ints(min, max).findFirst().getAsInt();
     return (int) Math.abs(Math.floor(Math.random() * (min - max + 1) + min));
   }
 
@@ -69,19 +66,17 @@ public class TestUtils {
 
   private static int calculateWeightedSum(String[] personalCodeBlocks, int[] multipliers) {
     int sum = IntStream
-            .range(0, personalCodeBlocks.length)
-            .map(i -> parseInt(personalCodeBlocks[i]) * multipliers[i])
-            .sum();
+        .range(0, personalCodeBlocks.length)
+        .map(i -> parseInt(personalCodeBlocks[i]) * multipliers[i])
+        .sum();
     return sum % 11;
   }
 
   public static String generateRandomPhoneNumber() {
-    return String.valueOf( new Random().nextInt(50000011, 50999999));
+    return String.valueOf(new Random().nextInt(50000011, 50999999));
   }
 
   public static String generateRandomEmail() {
     return "api_ee_test_" + new Random().nextInt(50000011, 50999999) + "@inbank.ee";
   }
 }
-
-
