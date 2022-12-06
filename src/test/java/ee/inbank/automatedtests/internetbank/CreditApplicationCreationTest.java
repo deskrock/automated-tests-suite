@@ -10,7 +10,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.By.id;
 
-public class CreditApplicationCreationTest extends CustomerOnboardingTest{
+public class CreditApplicationCreationTest extends CustomerLoginTest{
     public static final SelenideElement APPLY_SMALL_LOAN = $("button.btn.btn-white.ga-button-mainpage-calculator-small-loan-apply");
     public static final SelenideElement ACCEPT_MODAL = $(id("loan-offer-accept-modal___BV_modal_content_"));
     public static final SelenideElement IDENTIFICATION_MODAL = $("div.row.border-top.pt-5.mt-4");
@@ -22,16 +22,16 @@ public class CreditApplicationCreationTest extends CustomerOnboardingTest{
 
     }
     private void loanApplicationCreate() {
-        APPLY_SMALL_LOAN.should(Condition.visible,Duration.ofMinutes(10L));;
+        APPLY_SMALL_LOAN.shouldBe(Condition.visible);
         APPLY_SMALL_LOAN.click();
-        $(id("terms-checkbox-text")).should(Condition.visible,Duration.ofMinutes(10L));
+        $(id("terms-checkbox-text")).shouldBe(Condition.visible);
         $(id("loan-amount")).setValue("1500");
-        $(id("terms-checkbox-text")).should(Condition.visible,Duration.ofMinutes(10L));
+        $(id("terms-checkbox-text")).shouldBe(Condition.visible);
         $(id("terms-checkbox-text")).click();
         $(id("submit-loan-application")).click();
         $("a.text-white").hover();
         SelenideElement loanOfferAcceptButton = $(id("loan-offer-accept"));
-        loanOfferAcceptButton.should(Condition.visible, Duration.ofMinutes(10L));
+        loanOfferAcceptButton.shouldBe(Condition.visible);
         loanOfferAcceptButton.click();
         ACCEPT_MODAL.shouldBe(Condition.visible);
         SelenideElement acceptButton = ACCEPT_MODAL.$("button.btn.btn-primary");

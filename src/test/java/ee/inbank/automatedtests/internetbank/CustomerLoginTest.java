@@ -9,34 +9,32 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
-import static ee.inbank.automatedtests.TestUtils.*;
 
-public class CustomerOnboardingTest extends InternetBankAutomatedTest {
+public class CustomerLoginTest extends InternetBankAutomatedTest {
 
   public static final SelenideElement LOGIN_MODAL = $("#login-modal___BV_modal_header_");
   public static final SelenideElement FAKE_AUTH_MODAL = $(By.id("fake-auth-form"));
   public static final String SUBMIT_BUTTON = "button.btn.btn-primary";
 
+
   @Test
-  public void onboardNewCustomer() {
+  public void loginExistingCustomer() {
     acceptCookies();
-    onboardCustomer();
+    loginCustomer();
     closeWindow();
   }
 
-  public void onboardCustomer() {
+  public void loginCustomer() {
     TO_LOGIN_BUTTON.click();
     LOGIN_MODAL.shouldBe(visible);
     SelenideElement fakeSubmitButton = FAKE_AUTH_MODAL.$(SUBMIT_BUTTON);
     LOGIN_FAKE_AUTH.click();
+
     $x(("//*[@id=\"fake-firstname\" and (@class=\"form-control\")]")).sendKeys("Alex");
-    $x(("//*[@id=\"fake-lastname\" and (@class=\"form-control\")]")).sendKeys("Tester");
-    $x(("//*[@id=\"fake-idcode\" and (@class=\"form-control\")]")).setValue(generateEstonianPersonalID());
-    $x(("//*[@id=\"fake-id-phone\" and (@class=\"form-control\")]")).setValue(generateRandomPhoneNumber());
+    $x(("//*[@id=\"fake-lastname\" and (@class=\"form-control\")]")).sendKeys("Teder");
+    $x(("//*[@id=\"fake-idcode\" and (@class=\"form-control\")]")).sendKeys("39403180218");
+    $x(("//*[@id=\"fake-id-phone\" and (@class=\"form-control\")]")).sendKeys("58159643");
     fakeSubmitButton.shouldBe(visible);
     fakeSubmitButton.click();
-    $x(("//*[@id=\"email\" and (@class=\"form-control\")]")).setValue(generateRandomEmail());
-    $("p.text-primary.u-cursor-pointer").shouldHave(Condition.matchText("24.45"), Duration.ofSeconds(50L));
-
   }
 }
