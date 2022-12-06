@@ -19,7 +19,7 @@ public class LoanCalculatorTest extends InternetBankAutomatedTest {
 
     calculatorPage.setMonthValue("12");
     calculatorPage.setAmountValue("1000");
-    assertEquals(calculatorPage.getCalculatedValue("93.47"), "93.38");
+    assertEquals(calculatorPage.getCalculatedValue("93.38"), "93.38");
 
     mainPage.close();
   }
