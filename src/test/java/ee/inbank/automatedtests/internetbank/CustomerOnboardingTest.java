@@ -1,19 +1,21 @@
 package ee.inbank.automatedtests.internetbank;
 
-import static com.codeborne.selenide.Selenide.closeWindow;
+import static ee.inbank.automatedtests.TestUtils.assertCookiePresent;
 
+import ee.inbank.automatedtests.internetbank.pages.MainPage;
 import org.junit.jupiter.api.Test;
 
 public class CustomerOnboardingTest extends InternetBankAutomatedTest {
 
   @Test
-  public void onboardNewCustomer() {
-    acceptCookies();
-    loginCustomer();
-    closeWindow();
-  }
+  public void onboardNewCustomerTest() {
+    MainPage mainPage = new MainPage();
 
-  private void loginCustomer() {
+    mainPage.getConsentsPage().giveAllConsents();
+    assertCookiePresent(MARKETING_COOKIE_NAME);
 
+    mainPage.loginCustomer();
+
+    mainPage.close();
   }
 }
