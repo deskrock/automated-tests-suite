@@ -1,7 +1,11 @@
 package ee.inbank.automatedtests.internetbank.pages;
 
-import com.codeborne.selenide.Selenide;
+import static com.codeborne.selenide.Selenide.$;
 
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
+
+// page_url = https://staging2.inbank.ee/en
 public class MainPage {
 
   public MainPage() {
@@ -16,7 +20,10 @@ public class MainPage {
     return new CalculatorPage();
   }
 
-  public void loginCustomer() {
+  public LoginPage getLoginPage() {
+    SelenideElement loginButton = $("a[class$=\"ga-link-navigation-log-in\"]");
+    loginButton.click();
+    return new LoginPage();
   }
 
   public void close() {
