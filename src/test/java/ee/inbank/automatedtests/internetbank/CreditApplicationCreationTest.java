@@ -1,6 +1,5 @@
 package ee.inbank.automatedtests.internetbank;
 
-
 import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.By.id;
 
@@ -8,14 +7,13 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import ee.inbank.automatedtests.internetbank.pages.LoginPage;
 import ee.inbank.automatedtests.internetbank.pages.MainPage;
-import java.time.Duration;
 import org.junit.jupiter.api.Test;
 
+// TODO: Migrate into Page Objects pattern
 public class CreditApplicationCreationTest extends InternetBankAutomatedTest {
 
   public static final SelenideElement APPLY_SMALL_LOAN = $("button.btn.btn-white.ga-button-mainpage-calculator-small-loan-apply");
   public static final SelenideElement ACCEPT_MODAL = $(id("loan-offer-accept-modal___BV_modal_content_"));
-  public static final SelenideElement IDENTIFICATION_MODAL = $("div.row.border-top.pt-5.mt-4");
 
   private static void loginCustomer(MainPage mainPage) {
     LoginPage loginPage = mainPage.getLoginPage();
@@ -52,6 +50,5 @@ public class CreditApplicationCreationTest extends InternetBankAutomatedTest {
     acceptButton.click();
     //  $(id("postpone")).click();
     $(id("click-accept-confirm")).click();
-    $("p.text-primary.u-cursor-pointer").shouldHave(Condition.matchText("24.45"), Duration.ofSeconds(50L));
   }
 }

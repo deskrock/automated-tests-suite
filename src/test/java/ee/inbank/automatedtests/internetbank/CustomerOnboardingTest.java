@@ -28,6 +28,5 @@ public class CustomerOnboardingTest extends InternetBankAutomatedTest {
     customerDataInformationPage.insertDataForm(generateRandomEmail());
     customerDataInformationPage.acceptGeneralConsents();
     customerDataInformationPage.applyCustomerButton();
-
   }
 }

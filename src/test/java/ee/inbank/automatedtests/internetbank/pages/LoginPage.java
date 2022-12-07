@@ -11,8 +11,6 @@ import org.openqa.selenium.By;
 public class LoginPage {
 
   private final SelenideElement page = $("#login-modal___BV_modal_content_");
-  private final SelenideElement FAKE_AUTH_MODAL = page.$(By.id("fake-auth-form"));
-  private final String SUBMIT_BUTTON = "button.btn.btn-primary";
 
   public LoginPage() {
     page.shouldBe(visible);
@@ -40,7 +38,7 @@ public class LoginPage {
   }
 
   public LoginPage submitFakeAuthForm() {
-    SelenideElement fakeSubmitButton = FAKE_AUTH_MODAL.$(SUBMIT_BUTTON);
+    SelenideElement fakeSubmitButton = page.$(By.id("fake-auth-form")).$("button.btn.btn-primary");
     fakeSubmitButton.shouldBe(visible);
     fakeSubmitButton.click();
     return this;

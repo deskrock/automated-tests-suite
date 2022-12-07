@@ -11,7 +11,6 @@ public class CustomerDataInformationPage {
 
   public SelenideElement page = $x("//*[@id=\"__layout\"]/div/div[1]/main/section[2]/div");
 
-
   public CustomerDataInformationPage() {
     page.shouldBe(visible);
   }
@@ -25,11 +24,14 @@ public class CustomerDataInformationPage {
     page.$("#house").selectOption(0);
     return this;
   }
+
   public CustomerDataInformationPage acceptGeneralConsents() {
-    page.$("input.custom-control-input[id=data-processing]" ).click();
-    page.$("input.custom-control-input[id=eservice]").doubleClick();
+    page.$("label[for=marketing-general]").click();
+    page.$("label[for=eservice]").click();
+    page.$("label[for=data-processing] span").click();
     return this;
   }
+
   public CustomerDataInformationPage applyCustomerButton() {
     page.$("#submit-onboarding-application").click();
     return this;
