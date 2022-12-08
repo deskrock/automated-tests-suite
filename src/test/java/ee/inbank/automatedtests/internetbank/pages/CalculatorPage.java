@@ -27,6 +27,11 @@ public class CalculatorPage {
     amountElement.setValue(amountValue);
   }
 
+  public void applyForLoan() {
+    SelenideElement applyLoanButton = page.$("button.btn.btn-white.ga-button-mainpage-calculator-small-loan-apply").shouldBe(visible);
+    applyLoanButton.click();
+  }
+
   public String getCalculatedValue(String expectedValue) {
     SelenideElement resultElement = page.$x(".//*[@id=\"__BVID__146\"]/div/div[2]/h2/span")
         .shouldHave(exactText(expectedValue), ofSeconds(20L));

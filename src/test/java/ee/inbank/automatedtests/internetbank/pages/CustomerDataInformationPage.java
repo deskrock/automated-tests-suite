@@ -8,7 +8,7 @@ import com.codeborne.selenide.SelenideElement;
 // page_url = https://staging2.inbank.ee/en/auth/application
 public class CustomerDataInformationPage {
 
-  public SelenideElement page = $x("//*[@id=\"__layout\"]/div/div[1]/main/section[2]/div");
+  private static final SelenideElement page = $x("//*[@id=\"__layout\"]/div/div[1]/main/section[2]/div");
 
   public CustomerDataInformationPage() {
     page.shouldBe(visible);
