@@ -26,6 +26,7 @@ public class CalculatorPage {
     SelenideElement amountElement = page.$("#amount").shouldBe(visible);
     amountElement.setValue(amountValue);
   }
+
   public void applyForLoan() {
     SelenideElement applyLoanButton = page.$("button.btn.btn-white.ga-button-mainpage-calculator-small-loan-apply").shouldBe(visible);
     applyLoanButton.click();
