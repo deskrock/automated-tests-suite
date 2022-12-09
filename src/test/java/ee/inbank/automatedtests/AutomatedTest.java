@@ -11,5 +11,6 @@ public class AutomatedTest {
     // Configuration.browserSize = "1580x1000";
     // Configuration.browser = "chrome";
     Configuration.timeout = 100000L;
+    //Configuration.headless = true;
   }
 }

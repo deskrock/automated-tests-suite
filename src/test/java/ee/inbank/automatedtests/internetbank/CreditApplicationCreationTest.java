@@ -6,9 +6,9 @@ import ee.inbank.automatedtests.internetbank.pages.CreditApplicationPage;
 import ee.inbank.automatedtests.internetbank.pages.LoanOfferPage;
 import ee.inbank.automatedtests.internetbank.pages.LoginPage;
 import ee.inbank.automatedtests.internetbank.pages.MainPage;
+import ee.inbank.automatedtests.internetbank.pages.estonia.EstonianMainPage;
 import org.junit.jupiter.api.Test;
 
-// TODO: Migrate into Page Objects pattern
 public class CreditApplicationCreationTest extends InternetBankAutomatedTest {
 
   private static void loginCustomer(MainPage mainPage) {
@@ -20,7 +20,7 @@ public class CreditApplicationCreationTest extends InternetBankAutomatedTest {
 
   @Test
   public void creditApplicationCreationFlowTest() {
-    MainPage mainPage = new MainPage();
+    MainPage mainPage = new EstonianMainPage();
     mainPage.getConsentsPage().giveAllConsents();
 
     loginCustomer(mainPage);

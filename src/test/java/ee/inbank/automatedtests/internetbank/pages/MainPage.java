@@ -5,11 +5,10 @@ import static com.codeborne.selenide.Selenide.$;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
-// page_url = https://staging2.inbank.ee/en
-public class MainPage {
+public abstract class MainPage {
 
   public MainPage() {
-    Selenide.open("/");
+    Selenide.open(getUrl());
   }
 
   public ConsentsPage getConsentsPage() {
@@ -26,7 +25,5 @@ public class MainPage {
     return new LoginPage();
   }
 
-  public void close() {
-    Selenide.closeWindow();
-  }
+  protected abstract String getUrl();
 }
