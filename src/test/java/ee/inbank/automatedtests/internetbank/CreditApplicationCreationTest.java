@@ -1,6 +1,7 @@
 package ee.inbank.automatedtests.internetbank;
 
 import ee.inbank.automatedtests.internetbank.pages.CalculatorPage;
+import ee.inbank.automatedtests.internetbank.pages.ContractPage;
 import ee.inbank.automatedtests.internetbank.pages.CreditApplicationDecisionPage;
 import ee.inbank.automatedtests.internetbank.pages.CreditApplicationPage;
 import ee.inbank.automatedtests.internetbank.pages.LoanOfferPage;
@@ -40,5 +41,10 @@ public class CreditApplicationCreationTest extends InternetBankAutomatedTest {
 
     LoanOfferPage loanOfferPage = new LoanOfferPage();
     loanOfferPage.acceptOffer();
+    loanOfferPage.confirmAction();
+
+    ContractPage contractPage = new ContractPage();
+    contractPage.declineIdentification();
+    contractPage.signContract();
   }
 }

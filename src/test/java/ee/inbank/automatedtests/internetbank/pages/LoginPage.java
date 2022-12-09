@@ -24,8 +24,8 @@ public class LoginPage {
   public LoginPage insertExistingCustomerData() {
     page.$x((".//*[@id=\"fake-firstname\" and (@class=\"form-control\")]")).sendKeys("Alex");
     page.$x((".//*[@id=\"fake-lastname\" and (@class=\"form-control\")]")).sendKeys("Teder");
-    page.$x((".//*[@id=\"fake-idcode\" and (@class=\"form-control\")]")).sendKeys("34310037079");
-    page.$x((".//*[@id=\"fake-id-phone\" and (@class=\"form-control\")]")).sendKeys("50964588");
+    page.$x((".//*[@id=\"fake-idcode\" and (@class=\"form-control\")]")).sendKeys("38112050223");
+    page.$x((".//*[@id=\"fake-id-phone\" and (@class=\"form-control\")]")).sendKeys("50685636");
     return this;
   }
 
