@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'checkstyle'
+    id 'com.github.spotbugs' version '4.7.1'
 
 }
 
@@ -13,6 +14,7 @@ sourceCompatibility = java_version
 dependencies {
     testImplementation group: 'com.codeborne', name: 'selenide', version: selenide_version
     testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: webdriver_manager_version
+    testImplementation group: 'com.github.spotbugs', name: 'spotbugs-annotations', version: spotbugs_annotation_version
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junit_jupiter_version
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junit_jupiter_version
 }
@@ -24,3 +26,13 @@ test {
 checkstyle {
     toolVersion = "10.3"
 }
+
+spotbugsTest.reports {
+    html.required.set(true)
+}
+
+check.dependsOn(
+    checkstyleTest,
+    spotbugsTest,
+    test
+)
