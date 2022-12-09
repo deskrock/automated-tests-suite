@@ -13,7 +13,6 @@ sourceCompatibility = java_version
 dependencies {
     testImplementation group: 'com.codeborne', name: 'selenide', version: selenide_version
     testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: webdriver_manager_version
-    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: slf4j_version
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junit_jupiter_version
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junit_jupiter_version
 }

@@ -19,4 +19,10 @@ public class LoanOfferPage {
     page.$(id("loan-offer-accept")).click();
     return this;
   }
+
+  public LoanOfferPage confirmAction() {
+    SelenideElement confirmActionModal = $(id("loan-offer-accept-modal___BV_modal_content_")).shouldBe(visible);
+    confirmActionModal.$("button.btn.btn-primary").click();
+    return this;
+  }
 }
